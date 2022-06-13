@@ -51,13 +51,13 @@ const sample = {
       id: 11092,
       logo_path: null,
       name: "Ram Bergman Productions",
-      origin_country: "US",
+      origin_country: "Sweden",
     },
     {
       id: 2,
       logo_path: "/wdrCwmRnLFJhEoH8GSfymY85KHT.png",
       name: "Walt Disney Pictures",
-      origin_country: "US",
+      origin_country: "Ukraine",
     },
   ],
   production_countries: [
