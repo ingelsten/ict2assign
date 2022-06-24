@@ -1,3 +1,4 @@
+
 export default {
     adult: false,
     backdrop_path: "/5Iw7zQTHVRBOYpA0V6z0yypOPZh.jpg",
@@ -33,7 +34,7 @@ export default {
     original_language: "en",
     original_title: "Star Wars: The Last Jedi",
     overview:
-      "Rey develop her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares to do battle with the First Order.",
+      "Rey develops her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares to do battle with the First Order.",
     popularity: 44.208,
     poster_path: "/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg",
     production_companies: [
@@ -78,3 +79,4 @@ export default {
     vote_average: 7,
     vote_count: 9692,
   };
+  
