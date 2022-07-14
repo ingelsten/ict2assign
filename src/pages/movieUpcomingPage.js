@@ -3,7 +3,7 @@ import PageTemplate from "../components/templateMovieListPage";
 import { useQuery } from 'react-query'
 import Spinner from '../components/spinner'
 import { getUpcoming } from '../api/tmdb-api'
-import AddToFavouritesIcon from '../components/cardIcons/AddToPlaylist'
+import AddToPlaylistsIcon from '../components/cardIcons/AddToPlaylist'
 
 const UpcomingPage = (props) => {
   const {  data, error, isLoading, isError }  = useQuery('upcoming', getUpcoming)
@@ -18,16 +18,21 @@ const UpcomingPage = (props) => {
   const movies = data.results;
 
   // These three lines are redundant; we will replace them laterg.
-  const favourites = movies.filter(m => m.favouurite)
-  localStorage.setItem('favourites', JSON.stringify(favourites))
-  const addToFavourites = () => null;
+//const favourites = movies.filter(m => m.favouurite)
+// localStorage.setItem('favourites', JSON.stringify(favourites))
+// const addToFavourites = () => null;
+
+  const playlists = movies.filter(m => m.playulist)
+  localStorage.setItem('playlist', JSON.stringify(playlists))
+  const addToPlaylists = () => null;
+  
 
   return (
     <PageTemplate
       title="Upcoming Movies"
       movies={movies}
       action={(movie) => {
-        return <AddToFavouritesIcon movie={movie} />
+        return <AddToPlaylistsIcon movie={movie} />
       }}
     />
 );
