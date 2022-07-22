@@ -5,6 +5,8 @@ import Spinner from '../components/spinner'
 import { getMovies } from '../api/tmdb-api'
 import AddToFavouritesIcon from '../components/cardIcons/addToFavourites'
 
+//first git add
+
 const HomePage = (props) => {
   const {  data, error, isLoading, isError }  = useQuery('discover', getMovies)
 
