@@ -2,11 +2,11 @@ import React from "react";
 import PageTemplate from "../components/templateMovieListPage";
 import { useQuery } from 'react-query'
 import Spinner from '../components/spinner'
-import { getUpcoming } from '../api/tmdb-api'
+import { getOntheair } from '../api/tmdb-api'
 import AddToPlaylistsIcon from '../components/cardIcons/AddToPlaylist'
 
-const UpcomingPage = (props) => {
-  const {  data, error, isLoading, isError }  = useQuery('upcoming', getUpcoming)
+const OntheairPage = (props) => {
+  const {  data, error, isLoading, isError }  = useQuery('Ontheair', getOntheair)
 
   if (isLoading) {
     return <Spinner />
@@ -29,7 +29,7 @@ const UpcomingPage = (props) => {
 
   return (
     <PageTemplate
-      title="Upcoming Movies"
+      title="Ontheair Movies"
       movies={movies}
       action={(movie) => {
         return <AddToPlaylistsIcon movie={movie} />
@@ -38,6 +38,6 @@ const UpcomingPage = (props) => {
 );
 };
 
-export default UpcomingPage;
+export default OntheairPage;
 
 
