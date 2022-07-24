@@ -1,5 +1,5 @@
 import React from "react";
-import PageTemplate from "../components/templateMovieListPage";
+import PageTemplate from "../components/templateTvListPage";
 import { useQuery } from 'react-query'
 import Spinner from '../components/spinner'
 import { getOntheair } from '../api/tmdb-api'
@@ -15,29 +15,27 @@ const OntheairPage = (props) => {
   if (isError) {
     return <h1>{error.message}</h1>
   }  
-  const movies = data.results;
+  const tvs = data.results;
 
   // These three lines are redundant; we will replace them laterg.
 //const favourites = movies.filter(m => m.favouurite)
 // localStorage.setItem('favourites', JSON.stringify(favourites))
 // const addToFavourites = () => null;
 
-  const playlists = movies.filter(m => m.playulist)
+  const playlists = tvs.filter(m => m.playulist)
   localStorage.setItem('playlist', JSON.stringify(playlists))
   const addToPlaylists = () => null;
   
 
   return (
     <PageTemplate
-      title="Ontheair Movies"
-      movies={movies}
-      action={(movie) => {
-        return <AddToPlaylistsIcon movie={movie} />
+      name="Ontheair Movies"
+      tv={tvs}
+      action={(tv) => {
+        return <AddToPlaylistsIcon tv={tv} />
       }}
     />
 );
 };
 
 export default OntheairPage;
-
-
