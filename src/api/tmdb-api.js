@@ -44,6 +44,21 @@ export const getCredits = (id) => {
     });
   };
 
+  export const getTranslations= (id) => {
+    return fetch(
+      `https://api.themoviedb.org/3/movie/${id}/translations?api_key=${process.env.REACT_APP_TMDB_KEY}`
+      ).then((response) => {
+        if (!response.ok) {
+          throw new Error(response.json().message);
+        }
+        return response.json();
+      })
+      .catch((error) => {
+         throw error
+      });
+    };
+  
+
   export const getAlternativeTitles = (id) => {
     return fetch(
       `https://api.themoviedb.org/3/movie/${id}/alternative_titles?api_key=${process.env.REACT_APP_TMDB_KEY}`
@@ -95,6 +110,7 @@ export const getUpcoming = () => {
         if (!response.ok) {
           throw new Error(response.json().message);
         }
+        console.log(response.json);
         return response.json();
       })
       .catch((error) => {
@@ -110,6 +126,7 @@ export const getUpcoming = () => {
         if (!response.ok) {
           throw new Error(response.json().message);
         }
+        console.log(response.json)
         return response.json();
       })
       .catch((error) => {
