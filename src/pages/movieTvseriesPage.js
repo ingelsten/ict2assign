@@ -29,7 +29,7 @@ const OntheairPage = (props) => {
 
   return (
     <PageTemplate
-      name="Ontheair Movies"
+      name="On the air TV Series"
       tv={tvs}
       action={(tv) => {
         return <AddToPlaylistsIcon tv={tv} />
