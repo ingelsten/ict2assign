@@ -7,6 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import ImageList from "@material-ui/core/ImageList";
 import ImageListItem from "@material-ui/core/ImageListItem";
 
+//latest
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 const TvPage = (props) => {
   const classes = useStyles();
-  const { id } = useParams();
+  const {id} = useParams();
   const [tv, setTv] = useState(null);
   const [images, setImages] = useState([]);
 
@@ -73,7 +74,7 @@ const TvPage = (props) => {
                     >
                       <img
                         src={`https://image.tmdb.org/t/p/w500/${image}`}
-                        alt={image.poster_path}
+                        alt={image.file_path}
                       />
                     </ImageListItem>
                   ))}

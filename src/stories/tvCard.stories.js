@@ -19,8 +19,10 @@ Basic.storyName = "Default";
 export const Exceptional = () => {
   const sampleNoPoster = { ...SampleTv, poster_path: undefined };
   return (
-    <TvCard
+    <tvCard
       tv={sampleNoPoster}
+      action={(tv) => <AddToFavoritesIcon tv={tv} />}
+      taging={(tv) => null}
     />
   );
 };
