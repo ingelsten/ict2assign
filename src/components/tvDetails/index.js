@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Chip from "@material-ui/core/Chip";
 import Paper from "@material-ui/core/Paper";
 import AccessTimeIcon from "@material-ui/icons/AccessTime";
@@ -6,11 +6,6 @@ import MonetizationIcon from "@material-ui/icons/MonetizationOn";
 import StarRate from "@material-ui/icons/StarRate";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-// New
-import NavigationIcon from "@material-ui/icons/Navigation";
-import Fab from "@material-ui/core/Fab";
-import Drawer from "@material-ui/core/Drawer";
-import MovieReviews from '../movieReviews'
 
 const useStyles = makeStyles((theme) => ({
   chipRoot: {
@@ -35,16 +30,11 @@ const useStyles = makeStyles((theme) => ({
   chipLabel: {
     margin: theme.spacing(0.5),
   },
-  fab: {  //New
-    position: "fixed",
-    top: theme.spacing(15),
-    right: theme.spacing(2),
-  },
 }));
 
-const TvDetails = ( {tv}) => {
+const TvDetails = ( props) => {
   const classes = useStyles();
-  const [drawerOpen, setDrawerOpen] = useState(false); // New
+  const tv = props.tv
 
   return (
     <>
@@ -56,43 +46,18 @@ const TvDetails = ( {tv}) => {
         {tv.overview}
       </Typography>
       <div className={classes.chipRoot}>
+
       <Paper component="ul" className={classes.chipSet}>
-        <li>
-          <Chip label="Genres" className={classes.chipLabel} color="primary" />
-        </li>
-        {tv.genres.map((g) => (
-          <li key={g.name}>
-            <Chip label={g.name} className={classes.chip} />
-          </li>
-        ))}
-      </Paper>
-      <Paper component="ul" className={classes.chipSet}>
-        <Chip icon={<AccessTimeIcon />} label={`${tv.runtime} min.`} />
-        <Chip
-          icon={<MonetizationIcon />}
-          label={`${tv.revenue.toLocaleString()}`}
-        />
+        <Chip icon={<AccessTimeIcon />} label={`${tv.origin_country} Country Initial.`} />
+
         <Chip
           icon={<StarRate />}
           label={`${tv.vote_average} (${tv.vote_count}`}
         />
-        <Chip label={`Released: ${tv.release_date}`} />
+        <Chip label={`Released: ${tv.first_air_date}`} />
       </Paper>
       </div>
-      {/* New */}
-      <Fab    
-        color="secondary"
-        variant="extended"
-        onClick={() =>setDrawerOpen(true)}
-        className={classes.fab}
-      >
-        <NavigationIcon />
-        Reviews
-      </Fab>
-      <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-        <TvReviews tv={tv} />
-      </Drawer>
-    </>
+      </>
   );
 };
 export default  TvDetails ;
