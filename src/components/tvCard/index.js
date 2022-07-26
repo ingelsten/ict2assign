@@ -1,4 +1,4 @@
-import React, { useContext  } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -12,10 +12,6 @@ import CalendarIcon from "@material-ui/icons/CalendarTodayTwoTone";
 import StarRateIcon from "@material-ui/icons/StarRate";
 import IconButton from "@material-ui/core/IconButton";
 import Grid from "@material-ui/core/Grid";
-import { Link } from "react-router-dom";
-import Avatar from "@material-ui/core/Avatar";
-import { MoviesContext } from "../../contexts/moviesContext";
-
 
 const useStyles = makeStyles({
   card: { maxWidth: 345 },
@@ -25,38 +21,12 @@ const useStyles = makeStyles({
   },
 });
 
-export default function TvCard({ tv, action }) {
+export default function TvCard(props) {
   const classes = useStyles();
-  const { favourites, addToFavourites } = useContext(MoviesContext);
-
-  if (favourites.find((id) => id === tv.id)) {
-    tv.favourite = true;
-  } else {
-    tv.favourite = false
-  }
-
-  const handleAddToFavourite = (e) => {
-    e.preventDefault();
-    addToFavourites(tv);
-  };
-
+  const tv = props.tv;
   return (
     <Card className={classes.card}>
-          <CardHeader
-      className={classes.header}
-      avatar={
-        tv.favourite ? (
-          <Avatar className={classes.avatar}>
-            <FavoriteIcon />
-          </Avatar>
-        ) : null
-      }
-      name={
-        <Typography variant="h5" component="p">
-          {tv.name}{" "}
-        </Typography>
-      }
-    />
+      <CardHeader className={classes.header} title={tv.title} />
       <CardMedia
         className={classes.media}
         image={
@@ -82,12 +52,12 @@ export default function TvCard({ tv, action }) {
         </Grid>
       </CardContent>
       <CardActions disableSpacing>
-        {action(tv)}
-        <Link to={`/tvs/${tv.id}`}>
-          <Button variant="outlined" size="medium" color="primary">
-            More Info ...
-          </Button>
-        </Link>
+        <IconButton aria-label="add to favorites" onClick={null}>
+          <FavoriteIcon color="primary" fontSize="large" />
+        </IconButton>
+        <Button variant="outlined" size="medium" color="primary">
+          More Info ...
+        </Button>
       </CardActions>
     </Card>
   );

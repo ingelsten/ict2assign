@@ -1,41 +1,28 @@
 import React from "react";
-import PageTemplate from "../components/templateTvListPage";
-import { useQuery } from 'react-query'
-import Spinner from '../components/spinner'
-import { getOntheair } from '../api/tmdb-api'
-import AddToPlaylistsIcon from '../components/cardIcons/AddToPlaylist'
+import Header from "../components/headerTvList";
+import Grid from "@material-ui/core/Grid";
+import { makeStyles } from "@material-ui/core/styles";
+import TvList from "../components/tvList";
 
-const OntheairPage = (props) => {
-  const {  data, error, isLoading, isError }  = useQuery('Ontheair', getOntheair)
+const useStyles = makeStyles({
+  root: {
+    padding: "20px",
+  },
+});
 
-  if (isLoading) {
-    return <Spinner />
-  }
-
-  if (isError) {
-    return <h1>{error.message}</h1>
-  }  
-  const tvs = data.results;
-
-  // These three lines are redundant; we will replace them laterg.
-//const favourites = movies.filter(m => m.favouurite)
-// localStorage.setItem('favourites', JSON.stringify(favourites))
-// const addToFavourites = () => null;
-
-  const playlists = tvs.filter(m => m.playulist)
-  localStorage.setItem('playlist', JSON.stringify(playlists))
-  const addToPlaylists = () => null;
-  
+const TvListPage = (props) => {
+  const classes = useStyles();
+  const tvs = props.tvs;
 
   return (
-    <PageTemplate
-      name="On the air TV Series"
-      tv={tvs}
-      action={(tv) => {
-        return <AddToPlaylistsIcon tv={tv} />
-      }}
-    />
-);
+    <Grid container className={classes.root}>
+      <Grid item xs={12}>
+        <Header title={"Home Page"} />
+      </Grid>
+      <Grid item container spacing={5}>
+        <TvList tvs={tvs}></TvList>
+      </Grid>
+    </Grid>
+  );
 };
-
-export default OntheairPage;
+export default TvListPage;

@@ -5,8 +5,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import { useNavigate } from "react-router-dom";
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,19 +19,20 @@ const useStyles = makeStyles((theme) => ({
 const Header = (props ) => {
   const classes = useStyles();
   const name = props.name
-
-  const navigate = useNavigate();
-
   return (
     <Paper component="div" className={classes.root}>
-<IconButton aria-label="go back"  onClick={() => navigate(-1)}>
+      <IconButton
+        aria-label="go back"
+      >
         <ArrowBackIcon color="primary" fontSize="large" />
       </IconButton>
 
       <Typography variant="h4" component="h3">
         {name}
       </Typography>
-      <IconButton aria-label="go forward"  onClick={() => navigate(1)}>
+      <IconButton
+        aria-label="go forward"
+      >
         <ArrowForwardIcon color="primary" fontSize="large" />
       </IconButton>
     </Paper>
