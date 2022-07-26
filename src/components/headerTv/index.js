@@ -38,12 +38,12 @@ const TvHeader = (props) => {
       </IconButton>
 
       <Typography variant="h4" component="h3">
-        {tv.title}
+        {tv.name}
         <a href={tv.homepage}>
           <HomeIcon color="primary" />
         </a>
         <br />
-        <span className={classes.tagLine}>{`   "${tv.tagline}"`} </span>
+        <span className={classes.original_name}>{`   "${tv.original_name}"`} </span>
       </Typography>
       <IconButton aria-label="go forward"  onClick={() => navigate(1)}>
         <ArrowForwardIcon color="primary" fontSize="large" />

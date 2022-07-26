@@ -26,7 +26,7 @@ export default function TvCard(props) {
   const tv = props.tv;
   return (
     <Card className={classes.card}>
-      <CardHeader className={classes.header} title={tv.title} />
+      <CardHeader className={classes.header} name={tv.name} />
       <CardMedia
         className={classes.media}
         image={
@@ -40,7 +40,7 @@ export default function TvCard(props) {
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
               <CalendarIcon fontSize="small" />
-              {tv.release_date}
+              {tv.first_air_date}
             </Typography>
           </Grid>
           <Grid item xs={6}>
