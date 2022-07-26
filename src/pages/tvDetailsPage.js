@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 const TvPage = (props) => {
   const classes = useStyles();
-  const {id} = useParams();
+  const { id } = useParams();
   const [tv, setTv] = useState(null);
   const [images, setImages] = useState([]);
 
@@ -73,7 +73,7 @@ const TvPage = (props) => {
                       cols={1}
                     >
                       <img
-                        src={`https://image.tmdb.org/t/p/w500/${image}`}
+                        src={`https://image.tmdb.org/t/p/w500/${image.file_path}`}
                         alt={image.file_path}
                       />
                     </ImageListItem>
