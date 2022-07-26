@@ -14,6 +14,7 @@ import MovieUpcomingPage from "./pages/movieUpcomingPage";
 import MovieTopratedPage from './pages/movieTopratedPage';
 import MovieTvseriesPage from "./pages/movieTvseriesPage";
 
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
