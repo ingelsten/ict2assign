@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Header from "../headerTvList";
-import FilterCard from "../filterMoviesCard";
+import FilterCard from "../filterTvsCard";
 import Grid from "@material-ui/core/Grid";
 import Fab from "@material-ui/core/Fab";
 import Drawer from "@material-ui/core/Drawer";
@@ -9,8 +9,7 @@ import TvList from "../tvList";
 
 const useStyles = makeStyles((theme) =>  ({
   root: {
-    backgroundColor: "#bfbfbf",
-    paddingTop: theme.spacing(7),
+    padding: "20px",
   },
   fab: {
     marginTop: theme.spacing(8),
@@ -20,21 +19,21 @@ const useStyles = makeStyles((theme) =>  ({
   },
 }));
 
-function TvListPageTemplate({ tvs, name, action }) {
+function TvListPageTemplate({ tvs, name, selectFavourite }) {
   const classes = useStyles();
   const [nameFilter, setNameFilter] = useState("");
   const [genreFilter, setGenreFilter] = useState("0");
   const [drawerOpen, setDrawerOpen] = useState(false);
 
- // const genreId = Number(genreFilter);
+  const genreId = Number(genreFilter);
 
-//  let displayedTvs = tvs
-//    .filter((m) => {
-//      return m.name.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
-//    })
-//    .filter((m) => {
-//      return genreId > 0 ? m.genre_ids.includes(genreId) : true;
-//    });
+  let displayedTvs = tvs
+    .filter((m) => {
+      return m.name.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
+    })
+    .filter((m) => {
+      return genreId > 0 ? m.genre_ids.includes(genreId) : true;
+    });
 
   const handleChange = (type, value) => {
     if (type === "name") setNameFilter(value);
@@ -47,7 +46,9 @@ function TvListPageTemplate({ tvs, name, action }) {
       <Grid item xs={12}>
         <Header name={name} />
       </Grid>
-     
+      <Grid item container spacing={5}>
+        <TvList selectFavourite={selectFavourite} tvs={displayedTvs} />
+      </Grid>
     </Grid>
     <Fab
         color="secondary"
