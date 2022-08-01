@@ -44,8 +44,8 @@ export default function FilterTvsCard(props) {
 
   const handleChange = (e, type, value) => {
     e.preventDefault()
-    // Completed later
-  };
+    props.onUserInput(type, value)   // NEW
+  }
 
   const handleTextChange = e => {
     handleChange(e, "title", e.target.value)

@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) =>  ({
 const TvListPage = (props) => {
   const classes = useStyles();
   const [tvs, setTvs] = useState([]);
-  const [nameFilter, setNameFilter] = useState("");
+  const [titleFilter, setTitleFilter] = useState("");
   const [genreFilter, setGenreFilter] = useState(" ");
   const [drawerOpen, setDrawerOpen] = useState(false);
 
@@ -30,14 +30,14 @@ const TvListPage = (props) => {
 
   let displayedTvs = tvs
     .filter((m) => {
-      return m.name.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
+      return m.title.toLowerCase().search(titleFilter.toLowerCase()) !== -1;
     })
     .filter((m) => {
       return genreId > 0 ? m.genre_ids.includes(genreId) : true;
     });
 
   const handleChange = (type, value) => {
-    if (type === "name") setNameFilter(value);
+    if (type === "title") setTitleFilter(value);
     else setGenreFilter(value);
   };
 
@@ -60,7 +60,7 @@ const TvListPage = (props) => {
     <>
     <Grid container className={classes.root}>
       <Grid item xs={12}>
-        <Header Title={"Home Page"} />
+        <Header title={"Home Page"} />
       </Grid>
       <Grid item container spacing={5}>
         <TvList tvs={displayedTvs}></TvList>
@@ -81,7 +81,7 @@ const TvListPage = (props) => {
       >
         <FilterCard
           onUserInput={handleChange}
-          nameFilter={nameFilter}
+          titleFilter={titleFilter}
           genreFilter={genreFilter}
         />
       </Drawer>
