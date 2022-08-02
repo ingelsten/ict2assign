@@ -19,7 +19,7 @@ import MovieCastPage from "./pages/movieCastPage";
 import MovieCreditPage from "./pages/movieCreditPage";
 import TvSeriesPage from "./pages/TvseriesPage";
 import PersonListPage from "./pages/personlistPage";
-import PersonDetailsPage from "./pages/personDetailsPage";
+import PersonDetailsPage from "./pages/personDetailspage";
 
 
 
