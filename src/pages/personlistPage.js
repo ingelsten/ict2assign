@@ -1,24 +1,17 @@
-import React, { useState, useEffect } from "react";  // Changed
-import Header from "../components/headerPersonList";
-import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/core/styles";
-import PersonList from "../components/personList";
-
-const useStyles = makeStyles((theme) =>  ({
-  root: {
-    padding: "20px",
-  },
-  fab: {
-    marginTop: theme.spacing(8),
-    position: "fixed",
-    top: theme.spacing(2),
-    right: theme.spacing(2),
-  },
-}));
+import React, { useState, useEffect } from "react";
+import PageTemplate from '../components/templatePersonListPage'
 
 const PersonListPage = (props) => {
-  const classes = useStyles();
   const [persons, setPersons] = useState([]);
+  //const favourites = persons.filter(m => m.favourite)
+  //localStorage.setItem('favourites', JSON.stringify(favourites))
+
+  //const addToFavourites = (personId) => {
+  //  const updatedPersons = persons.map((m) =>
+  //    m.id === personId ? { ...m, favourite: true } : m
+  //  );
+  //  setPersons(updatedPersons);
+ // };
 
   useEffect(() => {
     fetch(
@@ -26,7 +19,6 @@ const PersonListPage = (props) => {
     )
       .then((res) => res.json())
       .then((json) => {
-        // console.log(json);
         return json.results;
       })
       .then((persons) => {
@@ -36,14 +28,11 @@ const PersonListPage = (props) => {
   }, []);
 
   return (
-    <Grid container className={classes.root}>
-      <Grid item xs={12}>
-        <Header title={"Home Page"} />
-      </Grid>
-      <Grid item container spacing={5}>
-        <PersonList persons={persons}></PersonList>
-      </Grid>
-    </Grid>
+    <PageTemplate
+      title='Discover Persons'
+      persons={persons}
+  //    selectFavourite={addToFavourites}
+    />
   );
 };
 export default PersonListPage;

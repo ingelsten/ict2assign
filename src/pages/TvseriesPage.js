@@ -1,44 +1,16 @@
 import React, { useState, useEffect } from "react";
-import Header from "../components/headerTvList";
-import FilterCard from "../components/filterTvsCard";
-import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/core/styles";
-import TvList from "../components/tvList";
-import Fab from "@material-ui/core/Fab";
-import Drawer from "@material-ui/core/Drawer";
-
-const useStyles = makeStyles((theme) =>  ({
-  root: {
-    padding: "20px",
-  },
-  fab: {
-    marginTop: theme.spacing(8),
-    position: "fixed",
-    top: theme.spacing(2),
-    right: theme.spacing(2),
-  },
-}));
+import PageTemplate from '../components/templateTvListPage'
 
 const TvListPage = (props) => {
-  const classes = useStyles();
   const [tvs, setTvs] = useState([]);
-  const [nameFilter, setNameFilter] = useState("");
-  const [genreFilter, setGenreFilter] = useState(" ");
-  const [drawerOpen, setDrawerOpen] = useState(false);
+  const favourites = tvs.filter(m => m.favourite)
+  localStorage.setItem('favourites', JSON.stringify(favourites))
 
-  const genreId = Number(genreFilter);
-
-  let displayedTvs = tvs
-    .filter((m) => {
-      return m.name.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
-    })
-    .filter((m) => {
-      return genreId > 0 ? m.genre_ids.includes(genreId) : true;
-    });
-
-  const handleChange = (type, value) => {
-    if (type === "name") setNameFilter(value);
-    else setGenreFilter(value);
+  const addToFavourites = (tvId) => {
+    const updatedTvs = tvs.map((m) =>
+      m.id === tvId ? { ...m, favourite: true } : m
+    );
+    setTvs(updatedTvs);
   };
 
   useEffect(() => {
@@ -47,7 +19,6 @@ const TvListPage = (props) => {
     )
       .then((res) => res.json())
       .then((json) => {
-        // console.log(json);
         return json.results;
       })
       .then((tvs) => {
@@ -57,35 +28,11 @@ const TvListPage = (props) => {
   }, []);
 
   return (
-    <>
-    <Grid container className={classes.root}>
-      <Grid item xs={12}>
-        <Header Title={"Home Page"} />
-      </Grid>
-      <Grid item container spacing={5}>
-        <TvList tvs={displayedTvs}></TvList>
-      </Grid>
-    </Grid>
-    <Fab
-        color="secondary"
-        variant="extended"
-        onClick={() => setDrawerOpen(true)}
-        className={classes.fab}
-      >
-        Filter
-      </Fab>
-      <Drawer
-        anchor="left"
-        open={drawerOpen}
-        onClose={() => setDrawerOpen(false)}
-      >
-        <FilterCard
-          onUserInput={handleChange}
-          nameFilter={nameFilter}
-          genreFilter={genreFilter}
-        />
-      </Drawer>
-    </>
+    <PageTemplate
+      title='Discover Tvs'
+      tvs={tvs}
+      selectFavourite={addToFavourites}
+    />
   );
 };
 export default TvListPage;
