@@ -27,7 +27,14 @@ export default function PersonCard(props) {
   const person = props.person;
   return (
     <Card className={classes.card}>
-      <CardHeader className={classes.header} name={person.name} />
+    <CardHeader
+className={classes.header}
+title={
+  <Typography variant="h5" component="p">
+    {person.name}{" "}
+  </Typography>
+}
+/>
       <CardMedia
         className={classes.media}
         image={

@@ -23,6 +23,7 @@ import PersonDetailsPage from "./pages/personDetailspage";
 
 
 
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -41,7 +42,7 @@ const App = () => {
         <SiteHeader />
         <MoviesContextProvider>
           <Routes>
-          <Route path="/reviews/form" element={<AddMovieReviewPage/>} />
+      <Route path="/reviews/form" element={<AddMovieReviewPage/>} />
       <Route path="/reviews/:id" element={<MovieReviewPage/>} />
       <Route path="/moviecast/:id" element={<MovieCastPage/>} />
       <Route path="/moviecredit/:id" element={<MovieCreditPage/>} />

@@ -26,8 +26,15 @@ export default function TvCard(props) {
   const classes = useStyles();
   const tv = props.tv;
   return (
-    <Card className={classes.card}>
-      <CardHeader className={classes.header} name={tv.name} />
+<Card className={classes.card}>
+    <CardHeader
+className={classes.header}
+title={
+  <Typography variant="h5" component="p">
+    {tv.name}{" "}
+  </Typography>
+}
+/>
       <CardMedia
         className={classes.media}
         image={
