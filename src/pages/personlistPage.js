@@ -4,11 +4,17 @@ import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import PersonList from "../components/personList";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) =>  ({
   root: {
     padding: "20px",
   },
-});
+  fab: {
+    marginTop: theme.spacing(8),
+    position: "fixed",
+    top: theme.spacing(2),
+    right: theme.spacing(2),
+  },
+}));
 
 const PersonListPage = (props) => {
   const classes = useStyles();

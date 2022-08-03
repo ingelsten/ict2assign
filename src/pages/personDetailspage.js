@@ -47,10 +47,10 @@ const PersonPage = (props) => {
       `https://api.themoviedb.org/3/person/${id}/images?api_key=${process.env.REACT_APP_TMDB_KEY}`
     ) 
     .then((res) => res.json())
-    .then((json) => json.posters)
+    .then((json) => json.profiles)
     .then((images) => {
       console.log(images)
-    //  setImages(images);
+    setImages(images);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
