@@ -47,7 +47,7 @@ const TvPage = (props) => {
       .then((res) => res.json())
       .then((json) => json.posters)
       .then((images) => {
-        // console,log(images)
+        console.log(images)
         setImages(images);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
