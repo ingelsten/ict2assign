@@ -180,5 +180,55 @@ export const getUpcoming = () => {
       });
   };
 
+  export const getTvOnAir = () => {
+  return fetch(
+    `https://api.themoviedb.org/3/tv/on_the_air?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+  )
+    .then((res) => res.json())
+    .then((json) => {
+      return json.results;
+    })
+  };
 
-      
+  export const getPersons = () => {
+  return fetch(
+      `https://api.themoviedb.org/3/person/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=true&page=1`
+    )
+      .then((res) => res.json())
+      .then((json) => {
+        return json.results;
+      })
+  };
+  export const getTvOnAirDetails = (id)  => {
+    return fetch(
+      `https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
+    )
+      .then((res) => {
+        return res.json();
+      })
+    };
+
+  export const getTvOnAirImages = (id)  => {
+    return fetch(
+      `https://api.themoviedb.org/3/tv/${id}/images?api_key=${process.env.REACT_APP_TMDB_KEY}`
+    )
+      .then((res) => res.json())
+      .then((json) => json.posters)
+    };
+
+    export const getPersonsDetails = (id) => {
+    return fetch(
+        `https://api.themoviedb.org/3/person/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
+      )
+        .then((res) => {
+          return res.json();
+        })
+      };
+
+      export const getPersonsImages = (id) => {
+        return fetch(
+          `https://api.themoviedb.org/3/person/${id}/images?api_key=${process.env.REACT_APP_TMDB_KEY}`
+        ) 
+        .then((res) => res.json())
+        .then((json) => json.profiles)
+      }

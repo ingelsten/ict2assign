@@ -6,6 +6,8 @@ import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import ImageList from "@material-ui/core/ImageList";
 import ImageListItem from "@material-ui/core/ImageListItem";
+import { getPersonsDetails } from "../api/tmdb-api";
+import { getPersonsImages } from "../api/tmdb-api";
 
 
 
@@ -28,33 +30,20 @@ const PersonPage = (props) => {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/person/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
-    )
-      .then((res) => {
-        return res.json();
-      })
-      .then((person) => {
-        console.log(person)
-        setPerson(person);
+    getPersonsDetails(id).then((person) => {
+       setPerson(person);
       });
   }, [id]);
 
-  console.log(id)
-
-  useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/person/${id}/images?api_key=${process.env.REACT_APP_TMDB_KEY}`
-    ) 
-    .then((res) => res.json())
-    .then((json) => json.profiles)
-    .then((images) => {
+   useEffect(() => {
+    getPersonsImages(id).then((images) => {
       console.log(images)
     setImages(images);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [id]);
   console.log(id)
+  
   return (
     <>
       {person ? (

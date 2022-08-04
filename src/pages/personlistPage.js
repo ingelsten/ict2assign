@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PageTemplate from '../components/templatePersonListPage'
+import { getPersons } from "../api/tmdb-api";
 
 const PersonListPage = (props) => {
   const [persons, setPersons] = useState([]);
@@ -14,14 +15,7 @@ const PersonListPage = (props) => {
  // };
 
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/person/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=true&page=1`
-    )
-      .then((res) => res.json())
-      .then((json) => {
-        return json.results;
-      })
-      .then((persons) => {
+    getPersons().then((persons) => {
         setPersons(persons);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps

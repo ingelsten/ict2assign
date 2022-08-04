@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PageTemplate from '../components/templateTvListPage'
+import { getTvOnAir } from "../api/tmdb-api";
 
 const TvListPage = (props) => {
   const [tvs, setTvs] = useState([]);
@@ -13,19 +14,12 @@ const TvListPage = (props) => {
     setTvs(updatedTvs);
   };
 
-  useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/tv/on_the_air?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
-    )
-      .then((res) => res.json())
-      .then((json) => {
-        return json.results;
-      })
-      .then((tvs) => {
-        setTvs(tvs);
-      });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+ useEffect(() => {
+    getTvOnAir().then(tvs => {
+      setTvs(tvs);
+    });
+     }, []);
+
 
   return (
     <PageTemplate

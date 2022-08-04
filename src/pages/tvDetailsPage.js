@@ -6,8 +6,8 @@ import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import ImageList from "@material-ui/core/ImageList";
 import ImageListItem from "@material-ui/core/ImageListItem";
-
-//latest
+import { getTvOnAirDetails } from "../api/tmdb-api";
+import { getTvOnAirImages } from "../api/tmdb-api";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,30 +28,21 @@ const TvPage = (props) => {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
-    )
-      .then((res) => {
-        return res.json();
-      })
-      .then((tv) => {
+   getTvOnAirDetails(id).then((tv) => {
         // console.log(tv)
         setTv(tv);
       });
   }, [id]);
 
+
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/tv/${id}/images?api_key=${process.env.REACT_APP_TMDB_KEY}`
-    )
-      .then((res) => res.json())
-      .then((json) => json.posters)
-      .then((images) => {
-        console.log(images)
-        setImages(images);
-      });
+    getTvOnAirImages(id).then((images) => {
+      setImages(images);
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [id]);
+
+
 
   return (
     <>
