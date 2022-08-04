@@ -9,7 +9,8 @@ import PersonList from "../personList";
 
 const useStyles = makeStyles((theme) =>  ({
   root: {
-    padding: "20px",
+    backgroundColor: "#c6ceff",
+    paddingTop: theme.spacing(7),
   },
   fab: {
     marginTop: theme.spacing(8),

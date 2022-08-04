@@ -9,7 +9,7 @@ import MovieList from "../movieList";
 
 const useStyles = makeStyles((theme) =>  ({
   root: {
-    backgroundColor: "#bfbfbf",
+    backgroundColor: "#c6ceff",
     paddingTop: theme.spacing(7),
   },
   fab: {
