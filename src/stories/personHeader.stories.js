@@ -7,5 +7,7 @@ export default {
   component: PersonHeader,
 };
 
-export const Basic = () => <PersonHeader person={SamplePerson} />;
+//export const Basic = () => <PersonHeader person={SamplePerson} />;
+export const Basic = () => <PersonHeader title="Actors" />;
+
 Basic.storyName = "Default";

@@ -15,9 +15,11 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
+    
   },
   appbar: {
     // background: 'none',
+    background: "#001493"
   },
   inactiveLink: {
     color: 'white',
@@ -63,7 +65,7 @@ const SiteHeader = () => {
       position="fixed" elevation={0} color='primary'> 
         <Toolbar>
           <Typography variant="h4" className={classes.title}>
-            TMDB Client
+            Ingelstens TMDB Client
           </Typography>
           <Typography variant="h6" className={classes.title}>
             All you ever wanted to know about Movies!
