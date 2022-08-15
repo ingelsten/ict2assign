@@ -59,18 +59,23 @@ You also need to get an API key from from https://www.themoviedb.org/ which will
 ### Views/Pages.
 
 Lists toprated movies from the Discover endpoint. Filtering on genre attributes is supported.
+
 ![][toprated]
 
 Lists toprated TV Series from the Discover endpoint. Filtering on genre attributes is supported.
+
 ![][tvseries]
 
 Lists toprated Actors from the Discover endpoint. F
+
 ![][actors]
 
 Shows detailed information on a specific TV-series
+
 ![][tvdetail]
 
 Shows detailed information on a specific actor
+
 ![][actordetail]
 
 
