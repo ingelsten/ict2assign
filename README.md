@@ -107,11 +107,11 @@ Not Implemented
 
 Some fault queirying on https://stackoverflow.com/ 
 
-[toprated]: ./public/toprated.png
-[tvseries]: ./public/tvseries.png
-[actors]: ./public/actors.png
-[tvdetail]: ./public/tvdetail.png
-[actordetail]: ./public/actordetail.png
+[toprated]: ./public/toprated.PNG
+[tvseries]: ./public/tvseries.PNG
+[actors]: ./public/actors.PNG
+[tvdetail]: ./public/tvdetail.PNG
+[actordetail]: ./public/actordetail.PNG
 [d1]: ./public/discover1.png
 [d2]: ./public/discover2.png
 [detail]: ./public/detail.png
