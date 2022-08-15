@@ -11,17 +11,19 @@ import { getPersonsImages } from "../api/tmdb-api";
 
 
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme) =>  ({
   root: {
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
+    backgroundColor: "#ffffff",
+    paddingTop: theme.spacing(7),
   },
-  gridList: {
-    width: 450,
-    height: "100vh",
+  fab: {
+    marginTop: theme.spacing(8),
+    position: "fixed",
+    top: theme.spacing(2),
+    right: theme.spacing(2),
   },
 }));
+
 
 const PersonPage = (props) => {
   const classes = useStyles();

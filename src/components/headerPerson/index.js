@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     flexWrap: "wrap",
     padding: theme.spacing(6.5),
+    
   },
   tagLine: {
     fontSize: "1.5rem",
