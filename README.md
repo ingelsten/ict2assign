@@ -81,7 +81,7 @@ Shows detailed information on a specific actor
 
 ### Component catalogue.
 
-Highlighted in yellow of Storybook cards
+Highlighted in yellow of Storybook card additions
 
 ![][stories]
 
