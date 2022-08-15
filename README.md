@@ -17,13 +17,32 @@ Expanded the movies app with the following:
 
 [ Briefly state (to a third party) the setup steps necessary to run your app/client locally, e.g. .env and any other config files.]
 
-Import into VS Code.
-2. From integrated terminal, type: 
-git remote remove origin
-3. In GitHub, create a new repository.
-4. From integrated terminal, type: 
-git remote add origin <new-repo-url>
-npm install
+To get a local copy up and running follow these simple example steps. Note the project was developed on a Windows 10 machine in Visual Studio Code.
+
+****IMPORTANT****
+You also need to get an API key from from https://www.themoviedb.org/ which will be used in the .env file.
+****IMPORTANT****
+
+1. Download the zipped file form <https://github.com/ingelsten/ict2assign.git>
+
+2. Unzip the folder.
+
+3. Move the folder to the appropriate location
+
+4. Open VS Code and navigate to the folder location
+
+5. Run command: npm install
+
+6. Add .env file in the route folder.
+
+7. In the .env file add the following
+
+REACT_APP_TMDB_KEY= "YOURKEY"
+FAST_REFRESH=false
+
+8. Run the app by typing: npm start
+
+9. To run the storybook type: npm run storybook
 
 ## App Design.
 
