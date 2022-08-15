@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import Header from "../headerTvList";
-import FilterCard from "../filterTvsCard";
+import Header from "../headerMovieList";
+import FilterCard from "../filterMoviesCard";
 import Grid from "@material-ui/core/Grid";
 import Fab from "@material-ui/core/Fab";
 import Drawer from "@material-ui/core/Drawer";
 import { makeStyles } from "@material-ui/core/styles";
-import TvList from "../tvList";
+import MovieList from "../movieList";
 
 const useStyles = makeStyles((theme) =>  ({
   root: {
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) =>  ({
   },
 }));
 
-function TvListPageTemplate({ tvs, title, action }) {
+function MovieListPageTemplate({ movies, title, action }) {
   const classes = useStyles();
   const [titleFilter, setTitleFilter] = useState("");
   const [genreFilter, setGenreFilter] = useState("0");
@@ -28,7 +28,7 @@ function TvListPageTemplate({ tvs, title, action }) {
 
   const genreId = Number(genreFilter);
 
-  let displayedTvs = tvs
+  let displayedMovies = movies
     .filter((m) => {
       return m.title.toLowerCase().search(titleFilter.toLowerCase()) !== -1;
     })
@@ -48,7 +48,7 @@ function TvListPageTemplate({ tvs, title, action }) {
         <Header title={title} />
       </Grid>
       <Grid item container spacing={5}>
-          <TvList action={action} tvs={displayedTvs} />
+          <MovieList action={action} movies={displayedMovies} />
         </Grid>
     </Grid>
     <Fab
@@ -73,4 +73,4 @@ function TvListPageTemplate({ tvs, title, action }) {
     </>    
   );
 }
-export default TvListPageTemplate;
+export default MovieListPageTemplate;

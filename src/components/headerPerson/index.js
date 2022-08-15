@@ -6,6 +6,7 @@ import Paper from "@material-ui/core/Paper";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import HomeIcon from "@material-ui/icons/Home";
+import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,20 +14,23 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-around",
     alignItems: "center",
     flexWrap: "wrap",
-    padding: theme.spacing(1.5),
+    padding: theme.spacing(6.5),
   },
   tagLine: {
     fontSize: "1.5rem",
   },
 }));
 
+
 const PersonHeader = (props) => {
   const classes = useStyles();
   const person = props.person;
 
+  const navigate = useNavigate();
+
   return (
     <Paper component="div" className={classes.root}>
-      <IconButton aria-label="go back">
+      <IconButton aria-label="go back" onClick={() => navigate(-1)}>
         <ArrowBackIcon color="primary" fontSize="large" />
       </IconButton>
 
