@@ -1,18 +1,16 @@
 
 # ICT Skills 2 Assignment.
 
-Name: [your name]
+Name: [Anders Ingelsten - 20095402]
 
 ## Overview.
 
 [ A paragraph on your React app's concept followed by a bullet-point list of its feature set - only list new/modified features if you are expanding the Movies app. ]
 
 e.g. 
-+ Feature 1
-+ Feature 2
-+ Feature 3
-+ etc
-+ etc
++ Top Rated Movies
++ TV Series
++ Actors
 
 ## Setup requirements.
 
@@ -55,7 +53,7 @@ e.g.
 
 ## Caching.
 
-[ List the TMDB server state cached by the app. Include a screenshot(s) of the react-query dev tools to validate your list.]
+[Not Implemented outside original scope]
 
 e.g.
 + Discover movies (pagination support)
@@ -67,24 +65,19 @@ e.g.
 
 ## Authentication (if relevant).
 
-[Briefly state how you implemented authentication for the app, e.g. basic, Firebase, etc. Also, list the routes that are private/protected.]
-
-e.g.
-+ /reviews/:id
-+ /movies/favourites
+[Not Implemented]
 
 ## Server-side persistence (if relevant)
 
-[ Specify the persistence 
-platform your app uses (e.g. TMDB lists, Firestore) and itemize the data it persists.]
+[Not Implemented]
 
 ## Additional features (if relevant),
 
-[Mention any additional user features of your app that may not be obvious from the previous sections, e.g. pagination, extended filtering/sorting, searching.]
+[Not Implemented]
 
 ## Independent learning (if relevant),
 
-[Briefly explain any aspects of your assignment work that required independent learning (i.e. not addressed in the lectures or labs) on your behalf., e.g. 3rd-party components, libraries, tools. Include source code references.]
+[Some fault queirying on https://stackoverflow.com/ ]
 
 [d1]: ./public/discover1.png
 [d2]: ./public/discover2.png
