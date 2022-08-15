@@ -60,7 +60,7 @@ You also need to get an API key from from https://www.themoviedb.org/ which will
 
 Lists toprated movies from the Discover endpoint. Filtering on genre attributes is supported.
 
-![toprated][toprated]
+![][toprated]
 
 Lists toprated TV Series from the Discover endpoint. Filtering on genre attributes is supported.
 
@@ -107,11 +107,11 @@ Not Implemented
 
 Some fault queirying on https://stackoverflow.com/ 
 
-[toprated]: ./public/toprated.PNG
-[tvseries]: ./public/tvseries.PNG
-[actors]: ./public/actors.PNG
-[tvdetail]: ./public/tvdetail.PNG
-[actordetail]: ./public/actordetail.PNG
+[toprated]: ./public/toprateds.png
+[tvseries]: ./public/tvseriesl.png
+[actors]: ./public/actorl.png
+[tvdetail]: ./public/tvdetails.png
+[actordetail]: ./public/actordetails.png
 [d1]: ./public/discover1.png
 [d2]: ./public/discover2.png
 [detail]: ./public/detail.png
