@@ -15,13 +15,13 @@ Expanded the movies app with the following:
 
 ## Setup requirements.
 
-[ Briefly state (to a third party) the setup steps necessary to run your app/client locally, e.g. .env and any other config files.]
-
 To get a local copy up and running follow these simple example steps. Note the project was developed on a Windows 10 machine in Visual Studio Code.
 
-****IMPORTANT****
+**IMPORTANT**
+
 You also need to get an API key from from https://www.themoviedb.org/ which will be used in the .env file.
-****IMPORTANT****
+
+**IMPORTANT**
 
 1. Download the zipped file form <https://github.com/ingelsten/ict2assign.git>
 
@@ -36,8 +36,10 @@ You also need to get an API key from from https://www.themoviedb.org/ which will
 6. Add .env file in the route folder.
 
 7. In the .env file add the following
-
+ 
+  
 REACT_APP_TMDB_KEY= "YOURKEY"
+ 
 FAST_REFRESH=false
 
 8. Run the app by typing: npm start
