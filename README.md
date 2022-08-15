@@ -8,9 +8,11 @@ Name: [Anders Ingelsten - 20095402]
 [ A paragraph on your React app's concept followed by a bullet-point list of its feature set - only list new/modified features if you are expanding the Movies app. ]
 
 e.g. 
-+ Top Rated Movies
-+ TV Series
-+ Actors
++ List of Top Rated Movies
++ List of TV Series
++ TV Series details
++ List of Actors
++ Actors Details
 
 ## Setup requirements.
 
