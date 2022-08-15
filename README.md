@@ -1,11 +1,9 @@
 
 # ICT Skills 2 Assignment.
 
-Name: [Anders Ingelsten - 20095402]
+Name: Anders Ingelsten - 20095402
 
 ## Overview.
-
-[ A paragraph on your React app's concept followed by a bullet-point list of its feature set - only list new/modified features if you are expanding the Movies app. ]
 
 Expanded the movies app with the following:
 
@@ -18,6 +16,14 @@ Expanded the movies app with the following:
 ## Setup requirements.
 
 [ Briefly state (to a third party) the setup steps necessary to run your app/client locally, e.g. .env and any other config files.]
+
+Import into VS Code.
+2. From integrated terminal, type: 
+git remote remove origin
+3. In GitHub, create a new repository.
+4. From integrated terminal, type: 
+git remote add origin <new-repo-url>
+npm install
 
 ## App Design.
 
@@ -54,21 +60,21 @@ e.g.
 
 ## Caching.
 
-[Not Implemented outside original scope]
+Not Implemented outside original scope
 
 ![][caching]
 
 ## Authentication (if relevant).
 
-[Not Implemented]
+Not Implemented
 
 ## Server-side persistence (if relevant)
 
-[Not Implemented]
+Not Implemented
 
 ## Additional features (if relevant),
 
-[Not Implemented]
+Not Implemented
 
 ## Independent learning (if relevant),
 
