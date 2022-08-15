@@ -35,12 +35,12 @@ You also need to get an API key from from https://www.themoviedb.org/ which will
 
 6. Add .env file in the route folder.
 
-7. In the .env file add the following
+7. In the .env file add the following:
  
   
-REACT_APP_TMDB_KEY= "YOURKEY"
+        REACT_APP_TMDB_KEY="YOUR API KEY"
  
-FAST_REFRESH=false
+        FAST_REFRESH=false
 
 8. Run the app by typing: npm start
 
@@ -58,24 +58,25 @@ FAST_REFRESH=false
 
 ### Views/Pages.
 
-[ For each view in your app, show a screenshot and caption - only new/modified ones in the case of the Movies Fan app. If necessary, use multiple screenshots to cover a view's full capability.
+Lists toprated movies from the Discover endpoint. Filtering on genre attributes is supported.
+![][toprated]
 
-e.g.
->Lists movies from the Discover endpoint. Filtering on title and genre attributes is supported.
+Lists toprated TV Series from the Discover endpoint. Filtering on genre attributes is supported.
+![][tvseries]
 
-![][d1]
+Lists toprated Actors from the Discover endpoint. F
+![][actors]
 
-![][d2]
+Shows detailed information on a specific TV-series
+![][tvdetail]
 
->Shows detailed information on a specific movie
-
-![][detail]
+Shows detailed information on a specific actor
+![][actordetail]
 
 
 ### Component catalogue.
 
-[ Use the Storybook UI to highlight the new components for which you developed stories.]
-e.g.
+Highlighted in yellow of Storybook cards
 
 ![][stories]
 
@@ -106,3 +107,8 @@ Some fault queirying on https://stackoverflow.com/
 [detail]: ./public/detail.png
 [caching]: ./public/caching.png
 [stories]: ./public/stories.png
+[toprated]: ./public/toprated.png
+[tvseries]: ./public/tvseries.png
+[actors]: ./public/actors.png
+[tvdetail]: ./public/tvdetail.png
+[actordetail]: ./public/actordetail.png
