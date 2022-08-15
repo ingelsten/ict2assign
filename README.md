@@ -7,7 +7,8 @@ Name: [Anders Ingelsten - 20095402]
 
 [ A paragraph on your React app's concept followed by a bullet-point list of its feature set - only list new/modified features if you are expanding the Movies app. ]
 
-e.g. 
+Expanded the movies app with the following:
+
 + List of Top Rated Movies
 + List of TV Series
 + TV Series details
@@ -22,13 +23,11 @@ e.g.
 
 ### Routing/Navigation.
 
-[List the set of routes your app supports - only mention new instances if you expanded the Movies Fan app. State the view linked with each route.] 
-
-e.g.
-+ /movies/:id - detailed information on a specific movie.
-+ /movies/upcoming - lists movies soon to be shown in cinemas.
-+ etc.
-+ etc.
++ /movies/toprated - lists the toprated movies.
++ /movies/tvseries - lists tv-series.
++ /movies/persons - lists pactors.
++ /tvs/:id - detailed information on a TV series.
++ /persons/:id - detailed information on a Actor.
 
 ### Views/Pages.
 
@@ -57,12 +56,6 @@ e.g.
 
 [Not Implemented outside original scope]
 
-e.g.
-+ Discover movies (pagination support)
-+ Movie details
- + etc
-+ etc
-
 ![][caching]
 
 ## Authentication (if relevant).
@@ -79,7 +72,7 @@ e.g.
 
 ## Independent learning (if relevant),
 
-[Some fault queirying on https://stackoverflow.com/ ]
+Some fault queirying on https://stackoverflow.com/ 
 
 [d1]: ./public/discover1.png
 [d2]: ./public/discover2.png
