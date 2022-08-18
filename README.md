@@ -66,7 +66,7 @@ Lists toprated TV Series from the Discover endpoint. Filtering on genre attribut
 
 ![][tvseries]
 
-Lists toprated Actors from the Discover endpoint. F
+Lists toprated Actors from the Discover endpoint.
 
 ![][actors]
 
