@@ -49,7 +49,12 @@ const PersonDetails = ( props) => {
       </Typography>
       <div className={classes.chipRoot}>
       <Paper component="ul" className={classes.chipSet}>
+        <Chip label={`Place of Birth: ${person.place_of_birth}`} />
+        <Chip label={`Birth Date: ${person.birthday}`} />
+      </Paper>
+      <Paper component="ul" className={classes.chipSet}>
         <Chip label={`Known for: ${person.known_for_department}`} />
+        <Chip label={`Also known as: ${person.also_known_as}`} />
       </Paper>
       </div>
       </>

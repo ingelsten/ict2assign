@@ -48,13 +48,14 @@ const TvDetails = ( props) => {
       <div className={classes.chipRoot}>
 
       <Paper component="ul" className={classes.chipSet}>
-        <Chip icon={<AccessTimeIcon />} label={`${tv.origin_country} Country Initial.`} />
-
-        <Chip
-          icon={<StarRate />}
-          label={`${tv.vote_average} (${tv.vote_count}`}
-        />
+        <Chip label={`Origin Country Initial: ${tv.origin_country}`} />
+        <Chip label={`Vote Avarage: ${tv.vote_average}`} />
         <Chip label={`Released: ${tv.first_air_date}`} />
+       </Paper>
+      <Paper component="ul" className={classes.chipSet}>
+        <Chip label={`Number of Seasons: ${tv.number_of_seasons}`} />
+        <Chip label={`Number of Episodes: ${tv.number_of_episodes}`} />
+        <Chip label={`Episode Run Time: ${tv.episode_run_time} min`} />
       </Paper>
       </div>
       </>
